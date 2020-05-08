@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.vitmap.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome To VIT Map"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:textAllCaps="true"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "college building name"
+        android:textAllCaps="true"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:layout_marginBottom="20dp"/>
+
+    <RadioGroup
+        android:id="@+id/block_grp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        >
+
+        <RadioButton
+            android:id="@+id/smv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SMV"/>
+        <RadioButton
+            android:id="@+id/sjt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SJT"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="room number"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/block_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nearest Room Number"
+        />
+    <EditText
+        android:id="@+id/block_dest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Destination Room Number"/>
+
+
+    <Button
+        android:id="@+id/block_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:text="SHOW BLOCK LAYOUT"
+        android:layout_marginBottom="10dp"
+        android:onClick="showBlock"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="are you cuurently away from your desired location(google maps will aid you to get to the location"
+            android:layout_marginBottom="10dp"/>
+        <RadioGroup
+            android:id="@+id/maps_grp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/maps_near"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Near"/>
+            <RadioButton
+                android:id="@+id/maps_away"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Away"/>
+        </RadioGroup>
+        <Button
+            android:id="@+id/maps_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Google Maps"
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"
+            android:onClick="showMaps"/>
+</LinearLayout>
