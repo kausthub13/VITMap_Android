@@ -26,29 +26,41 @@ public class MainActivity extends AppCompatActivity {
     public void showBlock(View v)
     {
         building = findViewById(R.id.block_grp);
-        int sel_block = building.getCheckedRadioButtonId();
-        block_select = findViewById(sel_block);
-        String block_name = block_select.getText().toString().toLowerCase();
+        String block_name="";
+        try{
+            int sel_block = building.getCheckedRadioButtonId();
+            block_select = findViewById(sel_block);
+            block_name = block_select.getText().toString().toLowerCase();
+        }
+        catch(Exception e)
+        {
+            Toast.makeText(getApplicationContext(), "Select A Building", Toast.LENGTH_SHORT).show();
+        }
+
         block_start = findViewById(R.id.block_start);
         block_dest = findViewById(R.id.block_dest);
 
         String start_room = block_start.getText().toString().toLowerCase();
         String dest_room = block_dest.getText().toString().toLowerCase();
         String floor = Character.toString(start_room.charAt(0));
-        if(start_room.length()==3 && dest_room.length()==3)
-        {
-            Intent i = new Intent(getApplicationContext(),ShowBlockLayout.class);
-            i.putExtra("block",block_name);
-            i.putExtra("start",start_room);
-            i.putExtra("dest",dest_room);
-            i.putExtra("floor",floor);
-            startActivity(i);
+        String dest_floor = Character.toString(dest_room.charAt(0));
+        if(!block_name.isEmpty()) {
+            if (start_room.length() == 3 && dest_room.length() == 3) {
+                Intent i = new Intent(getApplicationContext(), ShowBlockLayout.class);
+                i.putExtra("block", block_name);
+                i.putExtra("start", start_room);
+                i.putExtra("dest", dest_room);
+                i.putExtra("floor", floor);
+                i.putExtra("dest_floor", dest_floor);
+                startActivity(i);
+            } else {
+                Toast.makeText(getApplicationContext(), "Invalid Room Number", Toast.LENGTH_SHORT).show();
+            }
         }
         else
         {
-            Toast.makeText(getApplicationContext(),"Invalid Room Number",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Select A Building", Toast.LENGTH_SHORT).show();
         }
-
     }
 
     public void showMaps(View v)

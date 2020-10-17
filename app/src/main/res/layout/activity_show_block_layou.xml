@@ -10,7 +10,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:textSize="18.0sp" />
+        android:textSize="15sp" />
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,6 +21,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Draw Path Request"
+        android:textSize="15sp"
+        android:padding="20sp"
         android:onClick="drawRequest"
         android:textAlignment="center" />
 
@@ -28,17 +30,37 @@
         android:id="@+id/draw_path"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="77.0dip"
+        android:layout_marginLeft="10dp"
+        android:textSize="15sp"
+        android:padding="20sp"
         android:onClick="getPathRequest"
         android:text="Draw Path If Ready" />
     </LinearLayout>
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/block_layout"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.9"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center" />
+        <Button
+            android:id="@+id/dest_flr_btn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:textSize="15sp"
+            android:text="Go To Destination Floor"
+            android:onClick="destFloorIntent"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/start_coord"
@@ -63,4 +85,5 @@
         android:layout_height="wrap_content"
         android:visibility="invisible"
         />
+    </LinearLayout>
 </LinearLayout>
