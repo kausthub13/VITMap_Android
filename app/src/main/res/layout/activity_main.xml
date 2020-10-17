@@ -89,26 +89,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="are you cuurently away from your desired location(google maps will aid you to get to the location"
+            android:text="Get To The Building Using Google Maps"
+            android:textAllCaps="true"
             android:textSize="15dp"
             android:layout_marginBottom="10dp"/>
-        <RadioGroup
-            android:id="@+id/maps_grp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <RadioButton
-                android:id="@+id/maps_near"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="Near"/>
-            <RadioButton
-                android:id="@+id/maps_away"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="Away"/>
-        </RadioGroup>
+
         <Button
             android:id="@+id/maps_btn"
             android:layout_width="match_parent"
